@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Impact of Severe Weather Events</title>
+  <meta name="description" content="">
+  <meta name="author" content="Yichen Liu">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <link rel="stylesheet" href="libraries/frameworks/revealjs/css/reveal.min.css">
+  <link rel="stylesheet" href="libraries/frameworks/revealjs/css/theme/default.css" id="theme">
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" id="theme">
+  <!--[if lt IE 9]>
+  <script src="lib/js/html5shiv.js"></script>
+  <![endif]-->  <link rel="stylesheet" href = "assets/css/ribbons.css">
+
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section class='' data-state='' id='slide-1'>
+  <h2>Impact of Severe Weather Events</h2>
+  <h4>Developing Data Products Project</h4>
+
+<h3>Yichen Liu</h3>
+
+</section>
+<section class='' data-state='' id='slide-2'>
+  <h2>Initiation</h2>
+  <ul>
+<li><h4>Severe weather events can cause both public health and economic problems for communities and municipalities</h4></li>
+<li><h4>Understanding the impact of these events provides us insights for the future prevention</h4></li>
+<li><h4>This application helps us analyse the impact of severe weather events on the economy and the population in the United States</h4></li>
+</ul>
+
+</section>
+<section class='' data-state='' id='slide-3'>
+  <h2>The Data</h2>
+  <ul>
+<li><h4>Utilises data from the U.S. National Oceanic and Atmospheric Administration&#39;s (NOAA) storm database</h4></li>
+<li><h4>Raw data can be downloaded from: <a href="https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2FStormData.csv.bz2">https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2FStormData.csv.bz2</a></h4></li>
+<li><h4>The data is processed using the same data processing method for my Reproducible Research project</h4></li>
+<li><h4>Attributes of the processed data are shown as followed:</h4></li>
+</ul>
+
+<pre><code class="r">processed_data &lt;- read.csv(&quot;Data/data.csv&quot;, stringsAsFactors = FALSE)
+str(processed_data)
+</code></pre>
+
+<pre><code>## &#39;data.frame&#39;:    912 obs. of  7 variables:
+##  $ REGION         : chr  &quot;SOUTH&quot; &quot;SOUTHWEST&quot; &quot;MID-ATLANTIC&quot; &quot;NORTHEAST&quot; ...
+##  $ YEAR           : int  1996 1996 1997 1997 1997 1997 1998 1998 1998 1998 ...
+##  $ EVENT_TYPE     : chr  &quot;DROUGHT&quot; &quot;DROUGHT&quot; &quot;DROUGHT&quot; &quot;DROUGHT&quot; ...
+##  $ FATALITIES     : int  0 0 0 0 0 0 0 0 0 0 ...
+##  $ INJURIES       : int  0 0 0 0 0 0 0 0 0 0 ...
+##  $ DAMAGE_PROPERTY: num  0.00 1.35e+08 0.00 0.00 0.00 ...
+##  $ DAMAGE_CROP    : num  4.00e+06 5.00e+08 1.31e+08 2.00e+05 6.65e+07 ...
+</code></pre>
+
+</section>
+<section class='' data-state='' id='slide-4'>
+  <h2>How to Use</h2>
+  
+<div style='float:left;width:48%;' class='centered'>
+  <p><img src="Screenshot.PNG" alt="&#39;Screenshot&#39;"></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <ul>
+<li><h4>Access the application from: <a href="http://yichenliu.shinyapps.io/Develop_Data_Products/">http://yichenliu.shinyapps.io/Develop_Data_Products/</a></h4></li>
+<li><h4>Click on the &quot;Analysis&quot; tab at the top of the page</h4></li>
+<li><h4>Make selections on Year, Events Type and Region on the main selection panel</h4></li>
+<li><h4>Select analysis object - &quot;Economic Impact&quot; or &quot;Population Impact&quot;</h4></li>
+<li><h4>Select impact measurement</h4></li>
+<li><h4>A series of charts will be produced based on your selections</h4></li>
+</ul>
+
+</div>
+</section>
+<section class='' data-state='' id='slide-5'>
+  <h2>Key Attributes of the Application</h2>
+  <ul>
+<li><h4>Three dimensional analysis - by Region, by Events and by Year</h4></li>
+<li><h4>Comprehensive selection panel and your choice of measurement</h4></li>
+<li><h4>Clear layout - analyse the impact on the economy or the population</h4></li>
+</ul>
+
+</section>
+    </div>
+  </div>
+</body>
+  <script src="libraries/frameworks/revealjs/lib/js/head.min.js"></script>
+  <script src="libraries/frameworks/revealjs/js/reveal.min.js"></script>
+  <script>
+  // Full list of configuration options available here:
+  // https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: true,
+    theme: Reveal.getQueryHash().theme || 'default', 
+    transition: Reveal.getQueryHash().transition || 'linear', 
+    dependencies: [
+    // Cross-browser shim that fully implements classList -
+    // https://github.com/eligrey/classList.js/
+      { src: 'libraries/frameworks/revealjs/lib/js/classList.js', condition: function() { return !document.body.classList;}},
+      // Zoom in and out with Alt+click
+      { src: 'libraries/frameworks/revealjs/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+      // Speaker notes
+      { src: 'libraries/frameworks/revealjs/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+      // Remote control your reveal.js presentation using a touch device
+      //{ src: 'libraries/frameworks/revealjs/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+      ]
+  });
+  </script>  <!-- LOAD HIGHLIGHTER JS FILES -->
+<script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!-- DONE LOADING HIGHLIGHTER JS FILES -->
+ 
+
+</html>
