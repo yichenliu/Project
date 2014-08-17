@@ -14,4 +14,6 @@ To start using the application, please click on the `Analysis` tab at the top of
 
 #### Other information
 
-The source code for this application can be found from: https://github.com/yichenliu/Project. The address for this application is: http://yichenliu.shinyapps.io/Develop_Data_Products/.
+The source code for this application can be found from: https://github.com/yichenliu/Project
+
+The address of this application is: http://yichenliu.shinyapps.io/Develop_Data_Products/
